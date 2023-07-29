@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo</title>
-</head>
-<body>
-  <h1>Todo</h1>
-</body>
-</html>
+---
+import Todo from "../../components/todo/Todo";
+import Layout from "../../layouts/Layout.astro";
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<Todo client:load />
+	</main>
+</Layout>
