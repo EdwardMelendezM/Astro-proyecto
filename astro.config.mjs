@@ -7,9 +7,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [
     preact(),
-    tailwind({
-    config: {
-      applyBaseStyles: false,
-    },
-  }),]
+    tailwind(),]
 });

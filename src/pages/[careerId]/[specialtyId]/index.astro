@@ -1,0 +1,25 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import SubTitle from "../../../components/Subtitle.astro";
+
+export async function getStaticPaths() {
+  return [
+    {
+      params: {
+        specialtyId: "46345345345",
+        careerId: "6548431654813548"
+      },
+    },
+  ];
+}
+
+interface Params {
+  specialtyId: string;
+}
+
+const { specialtyId, careerId } = Astro.params;
+---
+
+<Layout title="Ing Software" >
+  <SubTitle subTitle="Ingenieria de software" hidden={true}/>
+</Layout>

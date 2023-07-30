@@ -1,0 +1,35 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import SubTitle from "../../components/Subtitle.astro"
+import SectionEspecialty from "../../components/carreer/SectionEspecialty.astro"
+import {useEspecialidad} from "../../hooks/useEspecialidad"
+
+export async function getStaticPaths() {
+  return [
+    {
+      params:{
+          careerId: "6548431654813548"
+      }
+    }
+  ]
+}
+
+interface Params {
+  careerId:string
+}
+
+const { careerId } = Astro.params
+const {especialidad} = useEspecialidad()
+
+---
+
+<Layout title="Especialidades">
+
+  <SubTitle subTitle="Mi especialidad" />
+
+  <SectionEspecialty
+		subtitle="Ingenieria informatica y de sistemas"
+		especialidad={especialidad}
+    careerId={careerId}
+	/>
+</Layout>

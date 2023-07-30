@@ -1,10 +1,43 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Footer from "../components/Footer.astro";
+import Subtitle from "../components/Subtitle.astro";
+import Title from "../components/Title.astro";
+import SectionCarreer from "../components/carreer/SectionCarreer.astro";
+import { useAsignatures } from "../hooks/useAsignature";
+import Layout from "../layouts/Layout.astro"; 
 
+const {
+	asignatureA,
+	asignatureB,
+	asignatureC,
+	asignatureD
+	} = useAsignatures();
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h3>Hola a todos</h3>
-	</main>
+<Layout title="MiGuía">
+		<main class="w-screen py-8">
+			<Title />
+			<hr class="border-gray-600 border-t-4" >
+
+			<Subtitle subTitle="Mi especialidad" />
+
+			<SectionCarreer
+				subtitle="Ingenieria y ciencias basicas"
+				asignatures={asignatureA}
+			/>
+			<SectionCarreer
+				subtitle="Ciencias de la salud"
+				asignatures={asignatureB}
+			/>
+			<SectionCarreer
+				subtitle="Ciencias Empresariales"
+				asignatures={asignatureC}
+			/>
+			<SectionCarreer
+				subtitle="Ciencias Sociales"
+				asignatures={asignatureD}
+			/>
+		</main>
+		<Footer />
+
 </Layout>
