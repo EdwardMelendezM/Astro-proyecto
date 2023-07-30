@@ -1,8 +1,11 @@
 ---
 import { useRoutes } from "../hooks/useRoutes";
+import Menu from "./menu";
 
 const { pathname } = Astro.url
 const routes = useRoutes(pathname)
+
+const {setIsActive} = Astro.props
 
 ---
 <nav class="w-screen flex px-6 py-8 justify-around">
@@ -11,7 +14,7 @@ const routes = useRoutes(pathname)
     <h1 class="text-xl font-bold" > TuGuía </h1>
   </div>
 
-  <div class="flex gap-x-5 mt-4">
+  <div class="hidden lg:flex gap-x-6 mt-4 ">
     {
       routes.map((item)=>(
         <a
@@ -22,16 +25,19 @@ const routes = useRoutes(pathname)
       ))
     }
   </div>
-  <div class="flex gap-x-3" >
+  <div class="hidden lg:flex  gap-x-5" >
     <button
-      class="text-xl text-orange-500 font-medium border-none outline-none h-12 hover:text-orange-400 transition"
+      class="text-lg text-orange-500 font-medium border-none outline-none h-12 hover:text-orange-400 transition"
       >
       Iniciar session
     </button>
     <button
-      class="text-xl text-gray-200 font-medium border-none outline-none bg-orange-500 rounded-lg px-4 h-12 hover:bg-orange-400 transition"
+      class="text-lg text-gray-200 font-medium border-none outline-none bg-orange-500 rounded-lg px-6 h-12 hover:bg-orange-400 transition"
     >
       Registrarse
     </button>
+  </div>
+  <div class="flex lg:hidden">
+    <Menu client:load  setIsActive={setIsActive}/>
   </div>
 </nav>

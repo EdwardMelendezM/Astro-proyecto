@@ -1,6 +1,7 @@
 --- 
 
 import Navbar from "../components/Navbar.astro" 
+import NavMobile from "../components/nav-mobile";
 import '../styles/global.css';
 	 
 	interface Props {
@@ -8,9 +9,13 @@ import '../styles/global.css';
 	}
 	
 	const { title } = Astro.props;
+	let isActive = false
+	const setIsActive=(state:boolean)=>{
+		isActive=state
+	}
 ---
 
-<!DOCTYPE html>
+<!DOCTYPE html>	
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
@@ -21,8 +26,10 @@ import '../styles/global.css';
 		
 		<title>{title}</title>
 	</head>
-	<body class="bg-gray-100 w-screen overflow-x-hidden">
-		<Navbar />	
+	<body class="relative bg-gray-100 w-full overflow-x-hidden">
+  	<NavMobile client:idle isActive={isActive} setIsActive={setIsActive} />
+		<Navbar setIsActive={setIsActive} />
+		
 		<slot>
 	</body>
 

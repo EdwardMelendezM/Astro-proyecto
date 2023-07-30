@@ -14,6 +14,7 @@
     "@astrojs/tailwind": "^4.0.0",
     "astro": "^2.9.6",
     "preact": "^10.16.0",
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.3.3",
+    "zustand": "^4.3.9"
   }
 }
