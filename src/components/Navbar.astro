@@ -26,16 +26,18 @@ const {setIsActive} = Astro.props
     }
   </div>
   <div class="hidden lg:flex  gap-x-5" >
-    <button
-      class="text-lg text-orange-500 font-medium border-none outline-none h-12 hover:text-orange-400 transition"
+    <a
+      href="/login"
+      class="mt-2 text-lg text-orange-500 font-medium border-none outline-none h-12 hover:text-orange-400 transition"
       >
       Iniciar session
-    </button>
-    <button
-      class="text-lg text-gray-200 font-medium border-none outline-none bg-orange-500 rounded-lg px-6 h-12 hover:bg-orange-400 transition"
+    </a>
+    <a
+      href="/register"
+      class="text-lg text-gray-100 font-medium border-none outline-none bg-orange-500 rounded-lg px-6 h-12 hover:bg-orange-400 transition flex items-center justify-center"
     >
       Registrarse
-    </button>
+    </a>
   </div>
   <div class="flex lg:hidden">
     <Menu client:load  setIsActive={setIsActive}/>
