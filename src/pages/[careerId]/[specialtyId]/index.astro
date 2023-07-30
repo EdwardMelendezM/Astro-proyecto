@@ -1,6 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import SubTitle from "../../../components/Subtitle.astro";
+import Footer from "../../../components/Footer.astro";
 
 export async function getStaticPaths() {
   return [
@@ -30,8 +31,8 @@ const { specialtyId, careerId } = Astro.params;
       <p class="mt-4 text-gray-600 text-sm sm:text-lg">
           Guia paso a paso para convertirse en un ingenierio de software moderno en 2023
       </p>
-      <div class="flex items-center justify-between mt-6 gap-x-8">
-        <div class="flex gap-x-3">
+      <div class="flex flex-col lg:flex-row gap-y-3 items-center justify-between mt-6 gap-x-8">
+        <div class="flex flex-col lg:flex-row gap-y-3 lg:gap-x-3 ">
           <button
             class="w-auto px-8 py-2 border-2 border-gray-600 text-gray-600 rounded-md flex justify-center items-center gap-x-2 hover:border-gray-400 font-medium"
           >
@@ -52,16 +53,34 @@ const { specialtyId, careerId } = Astro.params;
         </div>
         <button
             class="px-8 py-2 border-0 bg-gray-800 text-gray-300  rounded-md flex justify-center items-center gap-x-2 hover:bg-gray-700 transition font-medium"
-          >
+        >
             <img src="/icons/edit.svg" class="w-5 h-5" />
             Sugerir cambios
-          </button>
+        </button>
+        <a href="/" class="block lg:hidden text-lg text-gray-500" >Ver examenes pasados</a>
       </div>
     </div>
-    <hr class="mt-11 border-gray-400 border-1 w-screen" >
+    <hr class=" mt-11 border-gray-400 border-1 w-screen" >
+    <div class="relative w-auto max-w-full mt-11 ">
+      <img src="/icons/roadmapInfo.svg" alt="Info">
 
+      <div class="hidden lg:block absolute top-4 left-10 border-2 border-gray-500 rounded-lg px-8 py-2 w-auto">
+        <div class="flex gap-x-3"> <img src="/icons/checkGreen.svg" alt="icon"> Generales</div>
+        <div class="flex gap-x-3"> <img src="/icons/checkBlue.svg" alt="icon"> Necesarios</div>
+        <div class="flex gap-x-3"> <img src="/icons/checkRed.svg" alt="icon"> Especialidad</div>
+      </div>
+
+      <div class="hidden lg:block absolute top-4 right-10 border-2 border-gray-500 rounded-lg px-2 py-2 max-w-xl">
+       <div class="flex items-center justify-center flex-col gap-y-2">
+         <div class="px-3 mt-2 mx-auto text-center"> Quiero ver examenes y practicas pasadas</div>
+          <button class=" rounded-lg mx-auto px-6 py-2 bg-orange-400 text-gray-50">
+            Ver material
+          </button>
+       </div>
+      </div>
+    </div>
   </div>
-  
+  <Footer />
   
   
 
