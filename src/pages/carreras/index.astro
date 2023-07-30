@@ -1,9 +1,39 @@
 ---
+import Footer from "../../components/Footer.astro";
+import Subtitle from "../../components/Subtitle.astro";
+import SectionCarreer from "../../components/carreer/SectionCarreer.astro";
+import { useAsignatures } from "../../hooks/useAsignature";
 import Layout from "./../../layouts/Layout.astro"
+
+
+const {
+	asignatureA,
+	asignatureB,
+	asignatureC,
+	asignatureD
+	} = useAsignatures();
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Escuelas">
   <main>
-    <h3>Carrerasss</h3>
+    <Subtitle subTitle="Mi escuela profesional" />
+
+			<SectionCarreer
+				subtitle="Ingenieria y ciencias basicas"
+				asignatures={asignatureA}
+			/>
+			<SectionCarreer
+				subtitle="Ciencias de la salud"
+				asignatures={asignatureB}
+			/>
+			<SectionCarreer
+				subtitle="Ciencias Empresariales"
+				asignatures={asignatureC}
+			/>
+			<SectionCarreer
+				subtitle="Ciencias Sociales"
+				asignatures={asignatureD}
+			/>
+    <Footer />
   </main>
 </Layout>
