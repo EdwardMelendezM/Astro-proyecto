@@ -10,7 +10,6 @@ const Navbar = ({ pathname }: NavbarProps) => {
   const [isActive, setIsActive] = useState(false);
   const routes = useRoutes(pathname);
   const onClose = ()=>{
-    console.log(isActive)
     setIsActive(false)
   }
   return ( 

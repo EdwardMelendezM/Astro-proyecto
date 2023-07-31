@@ -8,7 +8,7 @@ const NavMobile = ({ isActive, onClose }: NavMobileProps) => {
   return (
     <>
       {
-        isActive && <div className="block lg:hidden fixed inset-0 bg-[rgba(255,255,255,0.95)] scroll-m-0" >
+        isActive && <div className="block lg:hidden fixed inset-0 bg-[rgba(255,255,255,0.95)] scroll-m-0 z-50" >
           <div className="flex justify-center items-center pt-20 flex-col gap-y-10 z-50">
             <h1 className="text-3xl">TuGuía</h1>
             <a href="/" className="hover:text-gray-600" >Home</a>
