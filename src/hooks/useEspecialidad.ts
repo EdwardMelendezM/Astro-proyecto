@@ -14,7 +14,7 @@ export const useEspecialidad =()=>{
       asignature: "Ingenieria computacional"
     },
     {
-      id: 46345345345,
+      id: "46345345345",
       asignature: "Ingenieria de software"
     },
     {
