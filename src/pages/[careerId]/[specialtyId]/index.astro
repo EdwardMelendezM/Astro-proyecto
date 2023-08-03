@@ -1,9 +1,10 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import SubTitle from "../../../components/Subtitle.astro";
 import Footer from "../../../components/Footer.astro";
 
 export async function getStaticPaths() {
+  const  roadmapsIds = await getRoadmapIds();
+  console.log(roadmapsIds)
   return [
     {
       params: {
@@ -18,7 +19,24 @@ interface Params {
   specialtyId: string;
 }
 
+export function roadmapPathToID(filePath: string):string{
+  const fileName = filePath.split('/').pop() || ""
+  return fileName
+}
+
+export async function getRoadmapIds(){
+  const roadmapFiles = await import.meta.glob<any>(
+    "/src/data/careers/*/*.svg",
+    {
+      eager: true,
+    }
+  )
+  console.log(roadmapFiles)
+  return Object.keys(roadmapFiles).map(roadmapPathToID)
+}
+
 const { specialtyId, careerId } = Astro.params;
+
 ---
 
 <Layout title="Ing Software">
