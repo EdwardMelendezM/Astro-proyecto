@@ -3,13 +3,12 @@ export function roadmapPathToID(filePath: string): string {
   return fileName
 }
 
-export async function getRoadmapIds() {
+export async function getRoadmapIds(ruta: string | undefined, specialtyId:string | undefined) {
   const roadmapFiles = await import.meta.glob<any>(
-    "/src/data/careers/*/*/*",
+    `/src/data/careers/${ruta}/${specialtyId}/*`,
     {
       eager: true,
     }
   )
-  console.log({ roadmapFiles })
   return Object.keys(roadmapFiles).map(roadmapPathToID)
 }

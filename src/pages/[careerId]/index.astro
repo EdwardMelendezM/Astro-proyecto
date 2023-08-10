@@ -5,6 +5,7 @@ import SectionEspecialty from "../../components/carreer/SectionEspecialty.astro"
 import {useEspecialidad} from "../../hooks/useEspecialidad"
 
 export async function getStaticPaths() {
+  
   return [
     {
       params:{
@@ -19,8 +20,8 @@ interface Params {
 }
 
 const { careerId } = Astro.params
-const { especialidad } = useEspecialidad()
-console.log(especialidad)
+const  especialidad  = useEspecialidad(careerId)
+
 
 ---
 
