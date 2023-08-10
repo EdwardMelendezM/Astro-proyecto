@@ -1,11 +1,23 @@
 export function roadmapPathToID(filePath: string): string {
   const fileName = filePath.split('/').pop() || ""
-  return fileName
+  const nameRoute = fileName.split(".")[0] || ""
+  return nameRoute
 }
 
-export async function getRoadmapIds(ruta: string | undefined, specialtyId:string | undefined) {
+export async function getRoadmapCareers() {
   const roadmapFiles = await import.meta.glob<any>(
-    `/src/data/careers/${ruta}/${specialtyId}/*`,
+    `/src/data/careers/*/*.md`,
+    {
+      eager: true,
+    }
+  )
+  return Object.keys(roadmapFiles).map(roadmapPathToID)
+}
+
+
+export async function getRoadmapEspeciality() {
+  const roadmapFiles = await import.meta.glob<any>(
+    `/src/data/careers/*/*/*.md`,
     {
       eager: true,
     }

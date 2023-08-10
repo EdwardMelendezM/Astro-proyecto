@@ -1,19 +1,26 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import Footer from "../../../components/Footer.astro";
-import { getRoadmapIds } from "../../../libs/roadmaps";
+import { getRoadmapCareers, getRoadmapEspeciality } from "../../../libs/roadmaps";
 
 export async function getStaticPaths() {
-  const  roadmapsIds = await getRoadmapIds(careerId,specialtyId);
-  console.log(roadmapsIds)
-  return [
-    {
-      params: {
-        specialtyId: "ingenieria-software",
-        careerId: "info"
-      },
-    },
-  ];
+  const pathEspecialidades = await getRoadmapEspeciality();
+  const pathCarreras = await getRoadmapCareers()
+  let listaVacia:any = []
+  pathCarreras.forEach(pathCarrera=>{
+    const newPath = pathEspecialidades.map((pathEspecialidad)=>({
+      params:{
+          specialtyId:pathEspecialidad,
+          careerId:pathCarrera
+        }
+    }))
+    listaVacia = [...listaVacia,...newPath]
+
+  })
+
+  console.log(listaVacia)
+  
+  return listaVacia
 }
 
 interface Params {

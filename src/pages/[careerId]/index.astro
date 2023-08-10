@@ -3,21 +3,21 @@ import Layout from "../../layouts/Layout.astro"
 import SubTitle from "../../components/Subtitle.astro"
 import SectionEspecialty from "../../components/carreer/SectionEspecialty.astro"
 import {useEspecialidad} from "../../hooks/useEspecialidad"
+import { getRoadmapCareers } from "../../libs/roadmaps"
 
 export async function getStaticPaths() {
-  
+  const pathCarreras = await getRoadmapCareers()
   return [
-    {
-      params:{
-          careerId: "info"
+    pathCarreras.map((path=>{
+      return {
+        params:{
+          careerId:path
+        }
       }
-    }
+    }))
   ]
 }
 
-interface Params {
-  careerId:string
-}
 
 const { careerId } = Astro.params
 const  especialidad  = useEspecialidad(careerId)

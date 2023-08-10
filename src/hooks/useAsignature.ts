@@ -1,164 +1,164 @@
 export const useAsignatures =()=>{
   const asignatureA = [
     {
-      id: "arqui",
+      id: "arquitectura",
       asignature: "Arquitectura"
     },
     {
-      id: crypto.randomUUID(),
+      id: "ingenieria-electrica",
       asignature: "Ing. Electrica"
     },
     {
-      id: crypto.randomUUID(),
+      id: "ingenieria-metalurgica",
       asignature: "Ing. Metalurgica"
     },
     {
-      id: crypto.randomUUID(),
+      id: "ingenieria-de-minas",
       asignature: "Ing. de Minas"
     },
     {
-      id: crypto.randomUUID(),
+      id: "ingenieria-mecanica",
       asignature: "Ing. Mecanica"
     },
     {
-      id: crypto.randomUUID(),
+      id: "ingenieria-quimica",
       asignature: "Ing. Quimica"
     },
     {
-      id: crypto.randomUUID(),
+      id: "ingenieria-civil",
       asignature: "Ing. Civil"
     },
     {
-      id: crypto.randomUUID(),
+      id: "quimica",
       asignature: "Quimica"
     },
     {
-      id: crypto.randomUUID(),
+      id: "fisica",
       asignature: "Fisica"
     },
     {
-      id: crypto.randomUUID(),
+      id: "matematica",
       asignature: "Matematica"
     },
     {
-      id: "info",
+      id: "ingenieria-informatica",
       asignature: "Ing. Informatica y de sistemas"
     },
     {
-      id: crypto.randomUUID(),
+      id: "ingenieria-agroindustrial",
       asignature: "Ing. Agroindustrial (sicuani) "
     },
     {
-      id: crypto.randomUUID(),
+      id: "ingenieria-electrica",
       asignature: "Ing. Electronica"
     },
     {
-      id: crypto.randomUUID(),
+      id: "matematica",
       asignature: "Matematica"
     },
     {
-      id: crypto.randomUUID(),
+      id: "ingenieria-petroquimica",
       asignature: "Ing. Petroquimica"
     },
 
   ]
   const asignatureB = [
     {
-      id: crypto.randomUUID(),
+      id: "agronomia",
       asignature: "Agronomia"
     },
     {
-      id: crypto.randomUUID(),
+      id: "biologia",
       asignature: "Biologia"
     },
     {
-      id: crypto.randomUUID(),
+      id: "enfermeria",
       asignature: "Enfermeria"
     },
     {
-      id: crypto.randomUUID(),
+      id: "farmacia-y-bioquimica",
       asignature: "Farmacia y bioquimica"
     },
     {
-      id: crypto.randomUUID(),
+      id: "medicina-humana",
       asignature: "Medicina humana"
     },
     {
-      id: crypto.randomUUID(),
+      id: "ingenieria-agropecuaria",
       asignature: "Ing. Agropecuaria (Filial)"
     },
     {
-      id: crypto.randomUUID(),
+      id: "obstetricia",
       asignature: "Obstetricia (Filial)"
     },
     {
-      id: crypto.randomUUID(),
+      id: "medicina-veterinaria",
       asignature: "Medicina Veterinaria (Filial)"
     },
     {
-      id: crypto.randomUUID(),
+      id: "medicina-veterinaria-filial",
       asignature: "Medicina Veterinaria (Filial)"
     }
   ]
 
   const asignatureC = [
     {
-      id: crypto.randomUUID(),
+      id: "ciencias administrativas",
       asignature: "Ciencias Administrativas"
     },
     {
-      id: crypto.randomUUID(),
+      id: "contabilidad",
       asignature: "Contabilidad"
     },
     {
-      id: crypto.randomUUID(),
+      id: "economia",
       asignature: "Economia"
     },
     {
-      id: crypto.randomUUID(),
+      id: "turismo",
       asignature: "Turismo"
     }
   ]
 
   const asignatureD = [
     {
-      id: crypto.randomUUID(),
+      id: "antropologia",
       asignature: "Antropologia"
     },
     {
-      id: crypto.randomUUID(),
+      id: "arqueologia",
       asignature: "Arqueologia"
     },
     {
-      id: crypto.randomUUID(),
+      id: "derecho",
       asignature: "Derecho"
     },
     {
-      id: crypto.randomUUID(),
+      id: "historia",
       asignature: "Historia"
     },
     {
-      id: crypto.randomUUID(),
+      id: "ciencas-de-la-comunicacion",
       asignature: "Ciencas de la comunicacion"
     },
     {
-      id: crypto.randomUUID(),
+      id:  "psicologia",
       asignature: "Psicologia"
     },
     {
-      id: crypto.randomUUID(),
+      id: "filosofia",
       asignature: "Filosofia"
     },
     {
-      id: crypto.randomUUID(),
+      id: "educacion-cusco",
       asignature: "Educacion Cusco"
     },
     {
-      id: crypto.randomUUID(),
+      id: "educacion-filial-canas",
       asignature: "Educacion Filial Canas"
     },
     {
-      id: crypto.randomUUID(),
+      id: "educacion-filial-espinar",
       asignature: "Educacion Filial Espinar"
     }
   ]

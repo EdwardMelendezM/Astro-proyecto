@@ -1,5 +1,5 @@
 type CareerId = string | undefined
-type EspecialidadType = "info" | "elect";
+type EspecialidadType = "ingenieria-informatica" | "elect";
 
 type AsignatureItem = {
   id: string;
@@ -10,7 +10,7 @@ type AsignatureItem = {
 export const useEspecialidad = (careerId: CareerId) =>{
   
   const especialidad: Record<EspecialidadType, AsignatureItem[]> = {
-    "info": [
+    "ingenieria-informatica": [
       {
         id: "ciencias-basicas",
         asignature: "Ciencias Basicas"
