@@ -8,8 +8,8 @@ export async function getStaticPaths() {
   return [
     {
       params: {
-        specialtyId: "46345345345",
-        careerId: "6548431654813548"
+        specialtyId: "ingenieria-software",
+        careerId: "info"
       },
     },
   ];
@@ -26,12 +26,12 @@ export function roadmapPathToID(filePath: string):string{
 
 export async function getRoadmapIds(){
   const roadmapFiles = await import.meta.glob<any>(
-    "/src/data/careers/*/*.svg",
+    "/src/data/careers/*/*/*",
     {
       eager: true,
     }
   )
-  console.log(roadmapFiles)
+  console.log({roadmapFiles})
   return Object.keys(roadmapFiles).map(roadmapPathToID)
 }
 

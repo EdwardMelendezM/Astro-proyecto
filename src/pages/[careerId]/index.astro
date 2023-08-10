@@ -8,7 +8,7 @@ export async function getStaticPaths() {
   return [
     {
       params:{
-          careerId: "6548431654813548"
+          careerId: "info"
       }
     }
   ]
@@ -19,7 +19,7 @@ interface Params {
 }
 
 const { careerId } = Astro.params
-const {especialidad} = useEspecialidad()
+const { especialidad } = useEspecialidad()
 console.log(especialidad)
 
 ---

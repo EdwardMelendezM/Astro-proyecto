@@ -10,11 +10,11 @@ export const useEspecialidad =()=>{
       asignature: "Ciencias de la computacion"
     },
     {
-      id: crypto.randomUUID(),
+      id: "ingenieria-computacional",
       asignature: "Ingenieria computacional"
     },
     {
-      id: "46345345345",
+      id: "ingenieria-software",
       asignature: "Ingenieria de software"
     },
     {

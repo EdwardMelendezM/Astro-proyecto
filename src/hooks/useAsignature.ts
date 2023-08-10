@@ -1,7 +1,7 @@
 export const useAsignatures =()=>{
   const asignatureA = [
     {
-      id: crypto.randomUUID(),
+      id: "arqui",
       asignature: "Arquitectura"
     },
     {
@@ -41,7 +41,7 @@ export const useAsignatures =()=>{
       asignature: "Matematica"
     },
     {
-      id: 6548431654813548,
+      id: "info",
       asignature: "Ing. Informatica y de sistemas"
     },
     {
