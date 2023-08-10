@@ -1,3 +1,9 @@
+export interface RoadmapFrontmatter{
+  title:string
+  description:string
+}
+
+
 export function roadmapPathToID(filePath: string): string {
   const fileName = filePath.split('/').pop() || ""
   const nameRoute = fileName.split(".")[0] || ""

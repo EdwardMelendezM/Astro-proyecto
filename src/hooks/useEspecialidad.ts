@@ -1,5 +1,5 @@
 type CareerId = string | undefined
-type EspecialidadType = "ingenieria-informatica" | "elect";
+type EspecialidadType = "ingenieria-informatica" | "ingenieria-electrica";
 
 type AsignatureItem = {
   id: string;
@@ -36,7 +36,7 @@ export const useEspecialidad = (careerId: CareerId) =>{
         asignature: "Investigacion"
       }
     ],
-    "elect": [
+    "ingenieria-electrica": [
       {
         id: "ciencias-basicas",
         asignature: "Ciencias Basicas"

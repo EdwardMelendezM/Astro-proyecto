@@ -4,6 +4,7 @@ import SubTitle from "../../components/Subtitle.astro"
 import SectionEspecialty from "../../components/carreer/SectionEspecialty.astro"
 import {useEspecialidad} from "../../hooks/useEspecialidad"
 import { getRoadmapCareers } from "../../libs/roadmaps"
+import { formatSubtitle } from "../../helpers/text-format"
 
 export async function getStaticPaths() {
   const pathCarreras = await getRoadmapCareers()
@@ -22,6 +23,8 @@ export async function getStaticPaths() {
 const { careerId } = Astro.params
 const  especialidad  = useEspecialidad(careerId)
 
+const subtitle = formatSubtitle(`${careerId}`)
+
 
 ---
 
@@ -30,7 +33,7 @@ const  especialidad  = useEspecialidad(careerId)
   <SubTitle subTitle="Mi especialidad" />
 
   <SectionEspecialty
-		subtitle="Ingenieria informatica y de sistemas"
+		subtitle={subtitle}
 		especialidad={especialidad}
     careerId={careerId}
 	/>
