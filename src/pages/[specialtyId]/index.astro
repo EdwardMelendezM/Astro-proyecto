@@ -1,31 +1,35 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
-import Footer from "../../../components/Footer.astro";
-import { RoadmapFrontmatter, getRoadmapCareers, getRoadmapEspeciality } from "../../../libs/roadmaps";
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import { RoadmapFrontmatter, getRoadmapEspeciality } from "../../libs/roadmaps";
+import useParams from "../../hooks/useParams";
+
+export const prerender = true;
 
 export async function getStaticPaths() {
   const pathEspecialidades = await getRoadmapEspeciality();
-  const pathCarreras = await getRoadmapCareers()
-  let listaVacia:any = []
-  pathCarreras.forEach(pathCarrera=>{
-    const newPath = pathEspecialidades.map((pathEspecialidad)=>({
-      params:{
-          specialtyId:pathEspecialidad,
-          careerId:pathCarrera
-        }
-    }))
-    listaVacia = [...listaVacia,...newPath]
-
-  })
-
-  return listaVacia
+  return [
+    {
+      params: { specialtyId:"ingenieria-software",carrera:"ingenieria-informatica" },
+      
+      
+    }
+  ]
+  // return pathEspecialidades.map((pathEspecialidad)=>({
+  //     params:{
+  //         specialtyId:pathEspecialidad,
+  //       }
+  //   }))
 }
 
 interface Params {
   specialtyId: string;
 }
+// Example: Construct a canonical URL using your production domain
+const {specialtyId} = Astro.params
+const params = useParams( Astro.url.searchParams)
+const careerId = params?.carrera
 
-const { specialtyId, careerId } = Astro.params;
 const especialidadeFile = await import(
   `../../../data/careers/${careerId}/${specialtyId}/${specialtyId}.md`
 );
@@ -42,10 +46,12 @@ const especialidadeData = especialidadeFile.frontmatter as RoadmapFrontmatter;
   <div class="flex justify-center items-center flex-col px-10 sm:px-6 py-4">
     <div>
       <h1 class="mt-11 text-2xl sm:text-4xl lg:text-5xl text-gray-800 font-semibold">
-        {especialidadeData.title}
+        <!-- {especialidadeData.title} -->
+        Titulo especialidad
       </h1>
       <p class="mt-4 text-gray-600 text-sm sm:text-lg">
-          {especialidadeData.description}
+          <!-- {especialidadeData.description} -->
+          Descripcion
       </p>
       <div class="flex flex-col lg:flex-row gap-y-3 items-center justify-between mt-6 gap-x-8">
         <div class="flex flex-col lg:flex-row gap-y-3 lg:gap-x-3 ">
@@ -78,7 +84,8 @@ const especialidadeData = especialidadeFile.frontmatter as RoadmapFrontmatter;
     </div>
     <hr class=" mt-11 border-gray-400 border-1 w-screen" >
     <div class="relative w-auto max-w-full mt-11 ">
-      <img src={`${especialidadeSvg.default}`} alt="Info">
+      <!-- <img src={`${especialidadeSvg.default}`} alt="Info"> -->
+      <img src={`images.png`} alt="Info">
 
       <div class="hidden lg:block absolute top-4 left-10 border-2 border-gray-500 rounded-lg px-8 py-2 w-auto">
         <div class="flex gap-x-3"> <img src="/icons/checkGreen.svg" alt="icon"> Generales</div>

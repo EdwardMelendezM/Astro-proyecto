@@ -38,13 +38,9 @@ export const useEspecialidad = (careerId: CareerId) =>{
     ],
     "ingenieria-electrica": [
       {
-        id: "ciencias-basicas",
-        asignature: "Ciencias Basicas"
-      },
-      {
-        id: "ciencias-de-la-computacion",
-        asignature: "Ciencias de la computacion"
-      },
+        id: "ingenieria-mecatronica",
+        asignature: "Investigacion"
+      }
     ],
   }
   

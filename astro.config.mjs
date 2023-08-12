@@ -7,5 +7,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [
     preact(),
-    tailwind(),]
+    tailwind(),
+  ],
+  output:'server'
 });

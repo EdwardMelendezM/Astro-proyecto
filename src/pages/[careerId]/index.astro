@@ -6,6 +6,9 @@ import {useEspecialidad} from "../../hooks/useEspecialidad"
 import { getRoadmapCareers } from "../../libs/roadmaps"
 import { formatSubtitle } from "../../helpers/text-format"
 
+
+export const prerender = true;
+
 export async function getStaticPaths() {
   const pathCarreras = await getRoadmapCareers()
   return [
@@ -24,7 +27,6 @@ const { careerId } = Astro.params
 const  especialidad  = useEspecialidad(careerId)
 
 const subtitle = formatSubtitle(`${careerId}`)
-
 
 ---
 
