@@ -7,7 +7,7 @@ interface Props {
   careerId:string | undefined
 }
 
-const { subtitle, especialidad, careerId } = Astro.props;
+const { subtitle, especialidad, careerId } = Astro.props as Props;
 ---
 
 <div
